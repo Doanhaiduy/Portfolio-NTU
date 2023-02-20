@@ -24,105 +24,111 @@
     <body style="height: 100vh">
         <main>
             <div class="portfolio">
-                <div class="portfolio__top">
-                    <div class="portfolio__img">
-                        <img src="./assets/img/avatar.jpg" alt="avatar" />
-                    </div>
-                    <div class="portfolio__info">
-                        <p class="info__title">Doan Hai Duy</p>
-                        <p class="info__desc">Front-end Dev</p>
-                    </div>
-                </div>
-                <div class="portfolio__bottom">
-                    <div class="Portfolio__about">
-                        <div class="about__button">About me</div>
-                        <div class="about__abs">
-                            <div class="about__close">X</div>
-                            <div class="about__dob info">
-                                <strong>Date of birth:</strong>
-                                <p>24/05/2003</p>
-                            </div>
-                            <div class="about__gen info">
-                                <strong>Gender:</strong>
-                                <p>Male</p>
-                            </div>
-                            <div class="about__add info">
-                                <strong>Address:</strong>
-                                <p>Doan Tran Nghiep, Nha Trang City, VN</p>
-                            </div>
-                            <div class="about__edu info">
-                                <strong>Education:</strong>
-                                <p>Second-year student at Nha Trang University</p>
-                            </div>
-                            <div class="about__goal info">
-                                <strong>Career goal:</strong>
-                                <p>I would like to become the Front-end developer</p>
-                            </div>
+                <div class="portfolio-box">
+                    <div class="portfolio__top">
+                        <div class="portfolio__img">
+                            <img src="./assets/img/avatar.jpg" alt="avatar" />
+                        </div>
+                        <div class="portfolio__info">
+                            <p class="info__title">Doan Hai Duy</p>
+                            <p class="info__desc">Front-end Dev</p>
+                        </div>
+                        <div class="portfolio__skill">
+                            <p>Skills:</p>
+                            <div class="portfolio__skill-item">HTML CSS</div>
+                            <div class="portfolio__skill-item">Javascript</div>
+                            <div class="portfolio__skill-item">React</div>
+                            <div class="portfolio__skill-item">updating...</div>
                         </div>
                     </div>
-                    <div class="portfolio__contact">
-                        <div class="portfolio__social">
-                            <a
-                                target="_blank"
-                                href="https://www.facebook.com/DoanHaiDuy.Profile/"
-                                style="--color-icon: #1877f2"
-                                class="portfolio__icon portfolio__icon--facebook"
-                            >
-                                <i class="fa-brands fa-facebook"></i>
-                                <span>Facebook</span>
-                            </a>
-                            <a
-                                target="_blank"
-                                href="https://github.com/Doanhaiduy"
-                                style="--color-icon: #000000"
-                                class="portfolio__icon portfolio__icon--github"
-                            >
-                                <i class="fa-brands fa-github"></i>
-                                <span>Github</span>
-                            </a>
-                            <a
-                                href="mailto: haiduytbt2k3@gmail.com"
-                                style="--color-icon: #b23121"
-                                class="portfolio__icon portfolio__icon--mail"
-                            >
-                                <i class="fa-solid fa-envelope"></i>
-                                <span>Email</span>
-                            </a>
-                            <a
-                                href="tel: +84399998943"
-                                style="--color-icon: #1dd925"
-                                class="portfolio__icon portfolio__icon--phone"
-                            >
-                                <i class="fa-solid fa-phone"></i>
-                                <span>Phone</span>
-                            </a>
+                    <div class="portfolio__bottom">
+                        <div class="Portfolio__about">
+                            <div class="about__button">About me</div>
+                            <div class="about__abs">
+                                <div class="about__close">X</div>
+                                <div class="about__dob info">
+                                    <strong>Date of birth:</strong>
+                                    <p>24/05/2003</p>
+                                </div>
+                                <div class="about__gen info">
+                                    <strong>Gender:</strong>
+                                    <p>Male</p>
+                                </div>
+                                <div class="about__add info">
+                                    <strong>Address:</strong>
+                                    <p>Doan Tran Nghiep, Nha Trang City, VN</p>
+                                </div>
+                                <div class="about__edu info">
+                                    <strong>Education:</strong>
+                                    <p>Second-year student at Nha Trang University</p>
+                                </div>
+                                <div class="about__goal info">
+                                    <strong>Career goal:</strong>
+                                    <p>I would like to become the Front-end developer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio__contact">
+                            <div class="portfolio__social">
+                                <a
+                                    target="_blank"
+                                    href="https://www.facebook.com/DoanHaiDuy.Profile/"
+                                    style="--color-icon: #1877f2"
+                                    class="portfolio__icon portfolio__icon--facebook"
+                                >
+                                    <i class="fa-brands fa-facebook"></i>
+                                    <span>Facebook</span>
+                                </a>
+                                <a
+                                    target="_blank"
+                                    href="https://github.com/Doanhaiduy"
+                                    style="--color-icon: #000000"
+                                    class="portfolio__icon portfolio__icon--github"
+                                >
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Github</span>
+                                </a>
+                                <a
+                                    href="mailto: haiduytbt2k3@gmail.com"
+                                    style="--color-icon: #b23121"
+                                    class="portfolio__icon portfolio__icon--mail"
+                                >
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span>Email</span>
+                                </a>
+                                <a
+                                    href="tel: +84399998943"
+                                    style="--color-icon: #1dd925"
+                                    class="portfolio__icon portfolio__icon--phone"
+                                >
+                                    <i class="fa-solid fa-phone"></i>
+                                    <span>Phone</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
         <script>
-            window.addEventListener("load", activehtml);
-            function activehtml() {
+            window.addEventListener("load", active_html);
+            function active_html() {
                 let btn = document.querySelector(".about__button");
                 let about = document.querySelector(".about__abs");
                 let close = document.querySelector(".about__close");
                 let portfolio = document.querySelector(".portfolio");
                 let contact = document.querySelector(".portfolio__contact");
+                let portfolio_top = document.querySelector(".portfolio__top");
+                btn.addEventListener("click", toggle_active);
 
-                btn.addEventListener("click", () => {
+                close.addEventListener("click", toggle_active);
+                function toggle_active() {
                     contact.classList.toggle("active");
                     btn.classList.toggle("active");
                     portfolio.classList.toggle("active");
                     about.classList.toggle("active");
-                });
-
-                close.addEventListener("click", () => {
-                    contact.classList.toggle("active");
-                    btn.classList.toggle("active");
-                    portfolio.classList.toggle("active");
-                    about.classList.toggle("active");
-                });
+                    portfolio_top.classList.toggle("active");
+                }
             }
         </script>
     </body>
