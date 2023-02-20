@@ -19,6 +19,27 @@ body {
     background-image: url(../img/32565304-galaxie-colorful-stars-texture-fond-seamless-pattern-.webp);
 }
 
+/* animation */
+
+@keyframes rotate_abs {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes ani {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* Portfolio */
 
 .portfolio {
@@ -36,7 +57,6 @@ body {
 
 .portfolio::before {
     border-radius: 16px;
-
     content: "";
     position: absolute;
     width: 400px;
@@ -69,15 +89,6 @@ body {
     border-radius: 16px;
     z-index: 10;
     position: absolute;
-}
-
-@keyframes rotate_abs {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 /* body Portfolio*/
@@ -412,16 +423,6 @@ body {
 
 .portfolio__img img:hover {
     animation: ani 5s linear infinite;
-}
-
-@keyframes ani {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 /* Active On */
