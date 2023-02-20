@@ -35,6 +35,8 @@ body {
 /* animation border */
 
 .portfolio::before {
+    border-radius: 16px;
+
     content: "";
     position: absolute;
     width: 400px;
@@ -47,6 +49,7 @@ body {
 }
 
 .portfolio::after {
+    border-radius: 16px;
     content: "";
     position: absolute;
     width: 400px;
