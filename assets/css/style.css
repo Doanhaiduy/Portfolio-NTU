@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    background-image: url(../img/32565304-galaxie-colorful-stars-texture-fond-seamless-pattern-.webp);
+}
+
+.portfolio {
+    background-color: #21d4fd;
+    background-image: radial-gradient(circle, #1b2432, #003444, #004444, #005230, #435a0e);
+    width: 400px;
+    height: 600px;
+    border-radius: 16px;
+    position: relative;
+    transition: 0.5s linear;
+}
+
+.portfolio__top,
+.portfolio__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.portfolio__img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid #40cd43;
+    margin-top: 30px;
+}
+
+.portfolio__img img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.portfolio__info {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.info__title {
+    font-size: 4rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.info__desc {
+    margin-top: 16px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* bottom */
+
+.portfolio__bottom {
+    padding-top: 0;
+}
+
+.Portfolio__about p {
+    display: inline;
+}
+.Portfolio__about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about__button {
+    z-index: 1;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 16px 36px;
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+    background-size: 200% auto;
+    border-radius: 6px;
+    transition: 0.5s ease;
+    cursor: pointer;
+    user-select: none;
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.about__button:hover {
+    background-position: right center;
+}
+
+.about__abs {
+    position: absolute;
+    width: 400px;
+    padding: 20px;
+    color: #fff;
+    border-radius: 16px;
+    bottom: -10%;
+    transition: 0.5s ease;
+    background-color: #74ebd5;
+    opacity: 0;
+    visibility: hidden;
+    background-image: radial-gradient(circle, #1b2432, #003444, #004444, #005230, #435a0e);
+}
+.about__abs.active {
+    opacity: 1;
+    bottom: 0;
+    visibility: visible;
+}
+
+.about__abs .info {
+    display: flex;
+    align-items: center;
+}
+
+.about__dob {
+    margin-bottom: 10px;
+}
+
+.about__abs .info strong {
+    font-weight: 600;
+    width: 30px;
+    flex: 2;
+    margin: auto;
+}
+
+.about__abs .info p {
+    flex: 4;
+    line-height: 1.4;
+    margin-left: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.about__button.active,
+.portfolio__contact.active {
+    visibility: hidden;
+    opacity: 0;
+    margin-top: 50px;
+}
+
+.about__close {
+    float: right;
+    cursor: pointer;
+}
+
+.portfolio.active {
+    background-image: linear-gradient(to top, #1b2432, #003444, #004444, #005230, #435a0e);
+}
+
+/* contact */
+
+.portfolio__contact {
+    margin-top: 46px;
+}
+
+.portfolio__social {
+    display: flex;
+    gap: 0 30px;
+}
+.portfolio__icon {
+    text-align: center;
+    padding: 14px;
+    background-color: transparent;
+    font-size: 2.5rem;
+    color: #fff;
+    border-radius: 7px;
+    position: relative;
+    border: 1px solid #ccc;
+    transition: 0.5s ease;
+}
+
+.portfolio__icon span {
+    position: absolute;
+    font-size: 1.4rem;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px;
+    background: #000;
+    border-radius: 4px;
+    min-width: 84px;
+    transition: 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+    scale: 0;
+    transform-origin: left;
+}
+
+.portfolio__icon span::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    border: 6px solid transparent;
+    border-color: #000 transparent transparent;
+}
+
+.portfolio__icon:hover span {
+    visibility: visible;
+    opacity: 1;
+    scale: 1;
+}
+
+.portfolio__icon:hover {
+    background-color: var(--color-icon);
+}
+
+.portfolio__img img:hover {
+    animation: ani 5s linear infinite;
+}
+
+@keyframes ani {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
