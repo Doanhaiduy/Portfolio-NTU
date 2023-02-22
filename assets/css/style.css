@@ -1,4 +1,12 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -11,8 +19,14 @@ html {
 }
 
 body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
@@ -21,21 +35,48 @@ body {
 
 /* animation */
 
-@keyframes rotate_abs {
+@-webkit-keyframes rotate_abs {
     0% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate_abs {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes ani {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
 
 @keyframes ani {
     0% {
+        -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
 
     100% {
+        -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
     }
 }
@@ -44,13 +85,20 @@ body {
 
 .portfolio {
     background-color: #21d4fd;
+    background-image: -o-radial-gradient(circle, #1b2432, #003444, #004444, #005230, #435a0e);
     background-image: radial-gradient(circle, #1b2432, #003444, #004444, #005230, #435a0e);
     width: 400px;
     height: 600px;
     border-radius: 16px;
     position: relative;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
     transition: 0.5s linear;
     overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /* animation border */
@@ -63,8 +111,20 @@ body {
     height: 600px;
     top: -50%;
     left: -50%;
+    -webkit-transform-origin: bottom right;
+    -ms-transform-origin: bottom right;
     transform-origin: bottom right;
+    background: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        from(transparent),
+        color-stop(var(--border-color)),
+        to(var(--border-color))
+    );
+    background: -o-linear-gradient(bottom, transparent, var(--border-color), var(--border-color));
     background: linear-gradient(0deg, transparent, var(--border-color), var(--border-color));
+    -webkit-animation: rotate_abs 6s linear infinite;
     animation: rotate_abs 6s linear infinite;
 }
 
@@ -76,15 +136,29 @@ body {
     height: 600px;
     top: -50%;
     left: -50%;
+    -webkit-transform-origin: bottom right;
+    -ms-transform-origin: bottom right;
     transform-origin: bottom right;
+    background: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        from(transparent),
+        color-stop(var(--border-color)),
+        to(var(--border-color))
+    );
+    background: -o-linear-gradient(bottom, transparent, var(--border-color), var(--border-color));
     background: linear-gradient(0deg, transparent, var(--border-color), var(--border-color));
+    -webkit-animation: rotate_abs 6s linear infinite;
     animation: rotate_abs 6s linear infinite;
+    -webkit-animation-delay: -3s;
     animation-delay: -3s;
 }
 
 .portfolio-box {
     inset: 2px;
     /* background: #000; */
+    background-image: -o-radial-gradient(circle, #1b2432, #003444, #004444, #005230, #435a0e);
     background-image: radial-gradient(circle, #1b2432, #003444, #004444, #005230, #435a0e);
     border-radius: 16px;
     z-index: 10;
@@ -95,8 +169,15 @@ body {
 
 .portfolio__top,
 .portfolio__bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     padding: 20px;
     position: relative;
@@ -109,13 +190,18 @@ body {
     overflow: hidden;
     border: 10px solid #1fa221;
     margin-top: 30px;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
 }
 
 .portfolio__img img {
     width: 100%;
     height: 100%;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
+    -o-object-fit: cover;
     object-fit: cover;
 }
 
@@ -123,11 +209,15 @@ body {
     margin-top: 30px;
     text-align: center;
     position: relative;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
 }
 
 .info__desc::after {
-    transition: 3s ease;
+    -webkit-transition: 1s ease;
+    -o-transition: 1s ease;
+    transition: 1s ease;
     position: relative;
     content: "";
     display: block;
@@ -139,6 +229,8 @@ body {
 }
 
 .info__title {
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
     top: 0;
     position: relative;
@@ -149,6 +241,8 @@ body {
 }
 
 .info__desc {
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
     top: 0;
     position: relative;
@@ -161,14 +255,24 @@ body {
 /* Active On */
 
 .active .portfolio__img {
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
+    -webkit-transform: translate(-100px, -30px);
+    -ms-transform: translate(-100px, -30px);
     transform: translate(-100px, -30px);
     width: 150px;
     height: 150px;
 }
 
 .active .portfolio__img img {
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
+
+    -webkit-transform: rotate(360deg);
+
+    -ms-transform: rotate(360deg);
 
     transform: rotate(360deg);
 }
@@ -180,7 +284,23 @@ body {
     right: -80px;
 }
 
+.info__title::before {
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
+    transition: 0.5s ease;
+    position: relative;
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    bottom: 6px;
+    background-color: var(--border-color);
+}
+
 .active .info__title::before {
+    -webkit-transition: 3s ease;
+    -o-transition: 3s ease;
+    transition: 3s ease;
     position: relative;
     content: "";
     display: block;
@@ -195,11 +315,16 @@ body {
     font-size: 1.5rem;
     top: -180px;
     right: -80px;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
     display: inline-block;
 }
 
 .active .info__desc::after {
+    -webkit-transition: 3s ease;
+    -o-transition: 3s ease;
+    transition: 3s ease;
     position: relative;
     content: "";
     display: block;
@@ -213,13 +338,20 @@ body {
 /* skill */
 
 .portfolio__skill {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     gap: 10px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: #fff;
     display: none;
     opacity: 0;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
 }
 
@@ -238,6 +370,8 @@ body {
 }
 
 .portfolio__skill-item {
+    -webkit-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
     transition: 0.2s ease;
 
     padding: 5px 7px;
@@ -255,6 +389,8 @@ body {
 .active .portfolio__skill {
     position: relative;
     top: -100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     opacity: 1;
 }
@@ -269,9 +405,18 @@ body {
     display: inline;
 }
 .Portfolio__about {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -281,11 +426,25 @@ body {
     font-weight: 500;
     color: #fff;
     padding: 16px 36px;
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        from(#f6d365),
+        color-stop(51%, #fda085),
+        to(#f6d365)
+    );
+    background-image: -o-linear-gradient(left, #f6d365 0%, #fda085 51%, #f6d365 100%);
     background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
     background-size: 200% auto;
     border-radius: 6px;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     opacity: 1;
     margin-top: 20px;
@@ -302,15 +461,22 @@ body {
     color: #fff;
     border-radius: 16px;
     bottom: -10%;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
     background-color: #74ebd5;
     opacity: 0;
     visibility: hidden;
+    background-image: -o-radial-gradient(circle, #1b2432, #003444, #004444, #005230, #435a0e);
     background-image: radial-gradient(circle, #1b2432, #003444, #004444, #005230, #435a0e);
 }
 
 .about__abs .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -321,11 +487,15 @@ body {
 .about__abs .info strong {
     font-weight: 600;
     width: 30px;
+    -webkit-box-flex: 2;
+    -ms-flex: 2;
     flex: 2;
     margin: auto;
 }
 
 .about__abs .info p {
+    -webkit-box-flex: 4;
+    -ms-flex: 4;
     flex: 4;
     line-height: 1.4;
     margin-left: 5px;
@@ -343,6 +513,17 @@ body {
 /* Active On */
 
 .portfolio.active {
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        from(#1b2432),
+        color-stop(#003444),
+        color-stop(#004444),
+        color-stop(#005230),
+        to(#435a0e)
+    );
+    background-image: -o-linear-gradient(bottom, #1b2432, #003444, #004444, #005230, #435a0e);
     background-image: linear-gradient(to top, #1b2432, #003444, #004444, #005230, #435a0e);
 }
 
@@ -360,13 +541,19 @@ body {
 /* contact */
 
 .portfolio__contact {
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
     margin-top: 46px;
     position: relative;
 }
 
 .portfolio__social {
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 0 30px;
     bottom: 0;
@@ -380,6 +567,8 @@ body {
     border-radius: 7px;
     position: relative;
     border: 1px solid #ccc;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
 }
 
@@ -388,15 +577,21 @@ body {
     font-size: 1.4rem;
     top: -40px;
     left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     padding: 8px;
     background: #000;
     border-radius: 4px;
     min-width: 84px;
+    -webkit-transition: 0.5s ease;
+    -o-transition: 0.5s ease;
     transition: 0.5s ease;
     opacity: 0;
     visibility: hidden;
     scale: 0;
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
     transform-origin: left;
 }
 
@@ -405,6 +600,8 @@ body {
     display: block;
     position: absolute;
     left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     top: 100%;
     border: 6px solid transparent;
@@ -422,6 +619,7 @@ body {
 }
 
 .portfolio__img img:hover {
+    -webkit-animation: ani 5s linear infinite;
     animation: ani 5s linear infinite;
 }
 
